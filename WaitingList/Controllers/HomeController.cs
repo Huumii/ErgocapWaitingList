@@ -22,7 +22,7 @@ namespace Waitlist.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Me contacter";
 
             return View();
         }
