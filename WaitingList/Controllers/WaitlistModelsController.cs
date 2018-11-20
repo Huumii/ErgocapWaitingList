@@ -16,9 +16,21 @@ namespace Waitlist.Controllers
         private DataBaseContext db = new DataBaseContext();
 
         // GET: WaitlistModels
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder)
         {
-            return View(db.Waitlists.ToList());
+            ViewBag.DateSortParam = String.IsNullOrEmpty(sortOrder) ? "date_desc" : "";
+            ViewBag.NameSortParam = sortOrder == "name" ? "name_desc" : "name";
+            switch (sortOrder)
+            {
+                case "date_desc":
+                    return View(db.Waitlists.OrderByDescending(s => s.InsertedDate).ToList());
+                case "name":
+                    return View(db.Waitlists.OrderBy(s => s.Name).ToList());
+                case "name_desc":
+                    return View(db.Waitlists.OrderByDescending(s => s.Name).ToList());
+                default:
+                    return View(db.Waitlists.OrderBy(s => s.InsertedDate).ToList());
+            }
         }
 
         // GET: WaitlistModels/Details/5
