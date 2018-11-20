@@ -1,0 +1,3 @@
+# Waitlist
+
+Simple waitlist project.
