@@ -6,114 +6,114 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using WaitingList.Models;
-using WaitingList.Models.List;
+using Waitlist.Models;
+using Waitlist.Models.List;
 
-namespace WaitingList.Controllers
+namespace Waitlist.Controllers
 {
-    public class WaitingListModelsController : Controller
+    public class WaitlistModelsController : Controller
     {
         private DataBaseContext db = new DataBaseContext();
 
-        // GET: WaitingListModels
+        // GET: WaitlistModels
         public ActionResult Index()
         {
-            return View(db.WaitingLists.ToList());
+            return View(db.Waitlists.ToList());
         }
 
-        // GET: WaitingListModels/Details/5
+        // GET: WaitlistModels/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WaitingListModels waitingListModels = db.WaitingLists.Find(id);
-            if (waitingListModels == null)
+            WaitlistModels waitlistModels = db.Waitlists.Find(id);
+            if (waitlistModels == null)
             {
                 return HttpNotFound();
             }
-            return View(waitingListModels);
+            return View(waitlistModels);
         }
 
-        // GET: WaitingListModels/Create
+        // GET: WaitlistModels/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: WaitingListModels/Create
+        // POST: WaitlistModels/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,InsertedDate,Name,Description")] WaitingListModels waitingListModels)
+        public ActionResult Create([Bind(Include = "Id,InsertedDate,Name,Description")] WaitlistModels waitlistModels)
         {
             if (ModelState.IsValid)
             {
-                waitingListModels.CreationDate = DateTime.Now;
-                waitingListModels.LastUpdate = waitingListModels.CreationDate;
-                db.WaitingLists.Add(waitingListModels);
+                waitlistModels.CreationDate = DateTime.Now;
+                waitlistModels.LastUpdate = waitlistModels.CreationDate;
+                db.Waitlists.Add(waitlistModels);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(waitingListModels);
+            return View(waitlistModels);
         }
 
-        // GET: WaitingListModels/Edit/5
+        // GET: WaitlistModels/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WaitingListModels waitingListModels = db.WaitingLists.Find(id);
-            if (waitingListModels == null)
+            WaitlistModels waitlistModels = db.Waitlists.Find(id);
+            if (waitlistModels == null)
             {
                 return HttpNotFound();
             }
-            return View(waitingListModels);
+            return View(waitlistModels);
         }
 
-        // POST: WaitingListModels/Edit/5
+        // POST: WaitlistModels/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,InsertedDate,Name,Description,CreationDate,LastUpdate")] WaitingListModels waitingListModels)
+        public ActionResult Edit([Bind(Include = "Id,InsertedDate,Name,Description,CreationDate,LastUpdate")] WaitlistModels waitlistModels)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(waitingListModels).State = EntityState.Modified;
+                db.Entry(waitlistModels).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(waitingListModels);
+            return View(waitlistModels);
         }
 
-        // GET: WaitingListModels/Delete/5
+        // GET: WaitlistModels/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WaitingListModels waitingListModels = db.WaitingLists.Find(id);
-            if (waitingListModels == null)
+            WaitlistModels waitlistModels = db.Waitlists.Find(id);
+            if (waitlistModels == null)
             {
                 return HttpNotFound();
             }
-            return View(waitingListModels);
+            return View(waitlistModels);
         }
 
-        // POST: WaitingListModels/Delete/5
+        // POST: WaitlistModels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            WaitingListModels waitingListModels = db.WaitingLists.Find(id);
-            db.WaitingLists.Remove(waitingListModels);
+            WaitlistModels waitlistModels = db.Waitlists.Find(id);
+            db.Waitlists.Remove(waitlistModels);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

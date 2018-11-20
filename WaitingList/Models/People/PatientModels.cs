@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using WaitingList.Models.People;
+using Waitlist.Models.People;
 
-namespace WaitingList.Models
+namespace Waitlist.Models
 {
     public enum GenderEnum
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace WaitingList.Models.List
+namespace Waitlist.Models.List
 {
-    public class WaitingListModels : BaseModels
+    public class WaitlistModels : BaseModels
     {
         public DateTime InsertedDate { get; set; }
         public virtual List<PatientsModels> Patients { get; set; }

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace WaitingList
+namespace Waitlist
 {
     public class BundleConfig
     {

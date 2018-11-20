@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using WaitingList.Models.List;
-using WaitingList.Models.People;
+using Waitlist.Models.List;
+using Waitlist.Models.People;
 
-namespace WaitingList.Models
+namespace Waitlist.Models
 {
     public class DataBaseContext : DbContext
     {
-        public DbSet<WaitingListModels> WaitingLists { get; set; }
+        public DbSet<WaitlistModels> Waitlists { get; set; }
         public DbSet<PatientsModels> Patients { get; set; }
         public DbSet<ParentModels> Parents { get; set; }
         public DbSet<PeopleModels> Peoples { get; set; }

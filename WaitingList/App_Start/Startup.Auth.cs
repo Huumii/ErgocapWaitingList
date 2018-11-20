@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using WaitingList.Models;
+using Waitlist.Models;
 
-namespace WaitingList
+namespace Waitlist
 {
     public partial class Startup
     {

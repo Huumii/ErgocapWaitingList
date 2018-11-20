@@ -8,9 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using WaitingList.Models;
+using Waitlist.Models;
 
-namespace WaitingList.Controllers
+namespace Waitlist.Controllers
 {
     [Authorize]
     public class AccountController : Controller

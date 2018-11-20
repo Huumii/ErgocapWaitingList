@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace WaitingList.Models
+namespace Waitlist.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

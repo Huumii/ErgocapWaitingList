@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using WaitingList.Models;
+using Waitlist.Models;
 
-namespace WaitingList
+namespace Waitlist
 {
     public class EmailService : IIdentityMessageService
     {
