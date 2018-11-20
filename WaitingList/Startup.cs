@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(WaitingList.Startup))]
-namespace WaitingList
+[assembly: OwinStartupAttribute(typeof(Waitlist.Startup))]
+namespace Waitlist
 {
     public partial class Startup
     {
