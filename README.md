@@ -1,3 +1,3 @@
-# Waiting List
+# Waitlist
 
-Simple waiting list project.
+Simple waitlist project.
