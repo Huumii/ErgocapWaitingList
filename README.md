@@ -1,3 +1,3 @@
-# Ergocap Waiting List
+# Waiting List
 
 Simple waiting list project.
